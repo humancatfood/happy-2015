@@ -119,5 +119,26 @@
             <div class="sparkles sparkles-4"></div>
             <div class="sparkles sparkles-5"></div>
         </div>
+        <script type="text/javascript">
+
+            (function doOne() {
+                var fs = document.querySelectorAll('.fireworks:not(.active)');
+
+                if (fs.length)
+                {
+                    var f = fs[Math.floor(Math.random() * fs.length)];
+
+                    f.classList.add('active')
+
+                    window.setTimeout(function () {
+                        f.classList.remove('active');
+                    }, 1500);
+                }
+
+                window.setTimeout(doOne, Math.random() * 1000);
+
+            }());
+
+        </script>
     </body>
 </html>
