@@ -2,6 +2,7 @@
 
 @background-colour: black;
 
+@star-colour: white;
 
 @snow-colour-light: #FFF8F8;
 @snow-colour-dark: #343434;
@@ -41,5 +42,26 @@ body {
     overflow: hidden;
 
     background-image: linear-gradient(0deg, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
+}
+
+
+
+
+.stars {
+    width: @max-width;
+    position: absolute;
+    height: 100%;
+}
+
+
+.star {
+    position: absolute;
+    display: inline-block;
+    width: 1em;
+    height: 2em;
+
+    background-image: radial-gradient(ellipse 100% 10% at 50%, @star-colour 0%, transparent 50%),
+                      radial-gradient(ellipse 10% 100% at 50%, @star-colour 0%, transparent 50%),
+                      radial-gradient(ellipse 75% 100% at 50%, fadeout(@star-colour, 50%) 0%, transparent 35%);
 }
 
