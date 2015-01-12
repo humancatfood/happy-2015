@@ -4,6 +4,11 @@
 
 @star-colour: white;
 
+@tree-colour-light: green;
+@tree-colour-dark: darkgreen;
+
+@tree-trunk-colour: #5A3612;
+
 @snow-colour-light: #FFF8F8;
 @snow-colour-dark: #343434;
 
@@ -63,5 +68,54 @@ body {
     background-image: radial-gradient(ellipse 100% 10% at 50%, @star-colour 0%, transparent 50%),
                       radial-gradient(ellipse 10% 100% at 50%, @star-colour 0%, transparent 50%),
                       radial-gradient(ellipse 75% 100% at 50%, fadeout(@star-colour, 50%) 0%, transparent 35%);
+}
+
+
+.tree {
+
+    position: absolute;
+    display: inline-block;
+    font-size: 0.3em;
+
+    bottom: @ground-height;
+
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 22em;
+        height: 12em;
+        position: relative;
+
+        background-image: radial-gradient(20em   at -4em -13em,   @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at 25em -13.5em, @background-colour 99%, transparent 100%),
+
+                          radial-gradient(15.5em at 6em -11em,    @snow-colour-light 92%, @tree-colour-light 98%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at 12em -11em,   @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+
+                          radial-gradient(20em   at -5.5em -11em, @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at 24.5em -13em, @background-colour 99%, transparent 100%),
+
+                          radial-gradient(15.5em at 5em -8em,     @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at 11em -8em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+
+                          radial-gradient(20em   at -7em -9em,    @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at 28em -10em,   @background-colour 99%, transparent 100%),
+
+                          radial-gradient(15.5em at 5em -5em,     @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at 15em -5em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%);
+    }
+
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 2.5em;
+        height: 3em;
+
+        position: absolute;
+        left: 9em;
+        bottom: 0;
+
+        background-color: @tree-trunk-colour;
+    }
 }
 
