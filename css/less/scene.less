@@ -13,6 +13,9 @@
 @snow-colour-medium: #898484;
 @snow-colour-dark: #cebcbc;
 
+@bauble-colour-1: red;
+@bauble-colour-2: yellow;
+@bauble-colour-3: purple;
 
 // sizes
 
@@ -136,6 +139,39 @@ body {
         left: 28em;
         bottom: @ground-height - 1;
     }
+
+    &.christmas-tree {
+        font-size: 50%;
+        right: 22em;
+        bottom: @ground-height - 3;
+
+        .decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-image: radial-gradient(0.5em at 47% 25%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.5em at 54% 22%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.5em at 51% 32%, @bauble-colour-3 70%, transparent 100%),
+                              radial-gradient(0.5em at 62% 33%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.5em at 37% 29%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.5em at 43% 19%, @bauble-colour-3 70%, transparent 100%),
+                              radial-gradient(0.7em at 48% 54%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.7em at 60% 53%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.7em at 45% 42%, @bauble-colour-3 70%, transparent 100%),
+                              radial-gradient(0.7em at 37% 51%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.7em at 19% 50%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.7em at 30% 53%, @bauble-colour-3 70%, transparent 100%),
+                              radial-gradient(0.9em at 76% 43%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.9em at 93% 67%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.9em at 78% 75%, @bauble-colour-3 70%, transparent 100%),
+                              radial-gradient(0.9em at 61% 76%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.9em at 30% 73%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.9em at 7% 72%,  @bauble-colour-3 70%, transparent 100%);
+
+        }
+    }
+}
 
 
 // houses
