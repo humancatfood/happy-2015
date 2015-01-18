@@ -118,7 +118,288 @@ body {
 
         background-color: @tree-trunk-colour;
     }
+
+
+// houses
+
+@house-wall-colour-light: #d8721d;
+@house-wall-colour-medium: darken(@house-wall-colour-light, 4%);;
+@house-wall-colour-dark: darken(@house-wall-colour-light, 10%);;
+
+@house-roof-colour-light: #105066;
+@house-roof-colour-medium: darken(@house-roof-colour-light, 4%);
+@house-roof-colour-dark: darken(@house-roof-colour-light, 10%);;
+
+@window-colour-light: #efe614;
+@window-colour-dark: red;
+
+@house-shadow-colour: rgba(0, 0, 0, 0.4);
+
+
+.house {
+    position: absolute;
+    display: inline-block;
+    font-size: 65%;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: @house-shadow-colour;
+        z-index: -1;
+        bottom: 0;
+        left: 1em;
+        transform: skew(26deg, 0);
+        transform-origin: bottom;
+    }
+
+    .wall, .roof, .window {
+        position: absolute;
+    }
+
+    .roof {
+        overflow: hidden;
+    }
+
+    .window {
+        overflow: hidden;
+        width: 3em;
+        height: 3em;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            left: -1em;
+            top: -1em;
+            background: linear-gradient(0, @window-colour-dark -30%, @window-colour-light 21%);
+        }
+    }
+
+    &.house-1 {
+
+        right: 36em;
+        bottom: 10%;
+        z-index: 30;
+
+        &:after {
+            width: 8em;
+            height: 4em;
+            transform: skew(40deg, 3deg);
+        }
+
+        .wall {
+            width: 8em;
+            height: 0;
+
+            bottom: 0;
+
+            border-top: 7em solid @house-wall-colour-light;
+            border-bottom: none;
+            border-left: 0.8em solid transparent;
+            border-right: 0.5em solid transparent;
+
+            transform: skew(0, 3deg);
+        }
+
+        .roof {
+            width: 14em;
+            height: 6em;
+            bottom: 6.4em;
+            left: -2em;
+            transform: skewY(-3deg);
+
+            &:after {
+                content: '';
+                display: block;
+                width: 16em;
+                height: 16em;
+                background-image: linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
+                transform: rotate(31deg) skew(-21deg, 8deg);
+                top: 3em;
+                position: absolute;
+                left: -1.5em;
+            }
+        }
+
+        .window-1 {
+            bottom: 0em;
+            left: 2em;
+            transform: skew(3deg, 3deg);
+            &:after {
+                transform: skew(-2deg, 1deg);
+            }
+        }
+
+        .window-2 {
+            bottom: 2.5em;
+            left: 1em;
+            transform: skew(2deg, -1deg);
+            &:after {
+                transform: skew(-3deg, 1deg);
+            }
+        }
+
+        .window-3 {
+            bottom: 2.5em;
+            left: 6em;
+            transform: skew(-3deg, 3deg);
+            &:after {
+                transform: skew(-2deg, -1deg);
+            }
+        }
+    }
+
+    &.house-2 {
+
+        right: 40em;
+        bottom: 22%;
+        z-index: 10;
+
+        &:after {
+            width: 7em;
+            height: 2em;
+            transform: skew(40deg, -5deg);
+        }
+
+        .wall {
+            width: 7em;
+            height: 0;
+
+            bottom: 0;
+
+            border-top: 12em solid @house-wall-colour-dark;
+            border-bottom: none;
+            border-left: 0.8em solid transparent;
+            border-right: 0.5em solid transparent;
+
+            transform: skew(0, -5deg);
+        }
+
+        .roof {
+            width: 11em;
+            height: 12em;
+            bottom: 11em;
+            left: -1em;
+            transform: skewY(3deg);
+
+            &:after {
+                content: '';
+                display: block;
+                width: 15em;
+                height: 14em;
+                background-image: linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
+                transform: rotate(20deg) skewY(44deg);
+                top: 9em;
+                position: absolute;
+                left: -1em;
+            }
+        }
+
+        .window-1 {
+            bottom: 7em;
+            left: 1em;
+            transform: skew(10deg, 2deg);
+            &:after {
+                transform: skew(-20deg, -3deg);
+            }
+        }
+
+        .window-2 {
+            bottom: 2em;
+            left: 1.5em;
+            transform: skew(1deg, -3deg);
+            &:after {
+                transform: skew(-4deg, 1deg);
+            }
+        }
+
+        .window-3 {
+            bottom: 3em;
+            left: 5em;
+            transform: skew(4deg, -2deg);
+            &:after {
+                transform: skew(-1deg, 0deg);
+            }
+        }
+    }
+
+    &.house-3 {
+
+        right: 16em;
+        bottom: 15%;
+        z-index: 20;
+
+        &:after {
+            width: 11em;
+            height: 3em;
+            transform: skew(40deg, -3deg);
+        }
+
+        .wall {
+            width: 11em;
+            height: 0;
+
+            bottom: 0;
+
+            border-top: 7em solid @house-wall-colour-medium;
+            border-bottom: none;
+            border-left: 0.8em solid transparent;
+            border-right: 1.5em solid transparent;
+
+            transform: rotate(-3deg);
+        }
+
+        .roof {
+            width: 17em;
+            height: 5em;
+            bottom: 6em;
+            transform: skew(-41deg, 2deg);
+
+            &:after {
+                content: '';
+                display: block;
+                width: 21em;
+                height: 16em;
+                background-image: linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
+                transform: skew(54deg, 3deg);
+                position: absolute;
+            }
+        }
+
+        .window-1 {
+            bottom: 2em;
+            left: 1em;
+            transform: skew(10deg, 2deg);
+            &:after {
+                transform: skew(-20deg, -3deg);
+            }
+        }
+
+        .window-2 {
+            bottom: 1em;
+            left: 5em;
+            transform: skew(-4deg, 1deg);
+            &:after {
+                transform: skew(3deg, 4deg);
+            }
+        }
+
+        .window-3 {
+            bottom: 1.5em;
+            left: 9em;
+            transform: skew(-3deg, -3deg);
+            &:after {
+                transform: skew(2deg, -3deg);
+            }
+        }
+    }
+
 }
+
+
 
 // fireworks timing
 
