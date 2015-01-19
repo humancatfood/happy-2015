@@ -23,7 +23,7 @@
 @max-height: 1080px;
 @min-width: 800px;
 @min-height: 600px;
-@ground-height: 25%;
+@ground-height: 14.0rem;
 
 * {
     white-space: nowrap;
@@ -82,7 +82,6 @@ body {
     display: inline-block;
     font-size: 0.3em;
 
-    bottom: @ground-height;
     z-index: -1;
 
     &:after {
@@ -127,23 +126,23 @@ body {
     &.tree-1 {
         font-size: 75%;
         left: -7em;
-        bottom: @ground-height - 5;
+        bottom: @ground-height - 2.8rem;
     }
     &.tree-2 {
         font-size: 55%;
         left: 36em;
-        bottom: 22%;
+        bottom: @ground-height - 1.3rem;
     }
     &.tree-3 {
         font-size: 20%;
         left: 28em;
-        bottom: @ground-height - 1;
+        bottom: @ground-height - 0.5rem;
     }
 
     &.christmas-tree {
         font-size: 50%;
         right: 22em;
-        bottom: @ground-height - 3;
+        bottom: @ground-height - 2rem;
 
         .decoration {
             position: absolute;
