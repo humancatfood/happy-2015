@@ -75,6 +75,9 @@ body {
                       radial-gradient(ellipse 75% 100% at 50%, fadeout(@star-colour, 50%) 0%, transparent 35%);
 }
 
+@tree-width: 22em;
+@half-tree-width: @tree-width / 2.0;
+@trunk-width: 3em;
 
 .tree {
 
@@ -87,37 +90,37 @@ body {
     &:after {
         content: '';
         display: inline-block;
-        width: 22em;
+        width: @tree-width;
         height: 12em;
         position: relative;
 
-        background-image: radial-gradient(20em   at -4em -13em,   @background-colour 99%, transparent 100%),
-                          radial-gradient(20em   at 25em -13.5em, @background-colour 99%, transparent 100%),
+        background-image: radial-gradient(20em   at @half-tree-width - 15em -13em,  @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width + 15em -13em,  @background-colour 99%, transparent 100%),
 
-                          radial-gradient(15.5em at 6em -11em,    @snow-colour-light 92%, @tree-colour-light 98%, @tree-colour-dark 99%, transparent 100%),
-                          radial-gradient(15.5em at 12em -11em,   @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at @half-tree-width - 5em -11em,   @snow-colour-light 92%, @tree-colour-light 98%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at @half-tree-width + 5em -11em,   @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
 
-                          radial-gradient(20em   at -5.5em -11em, @background-colour 99%, transparent 100%),
-                          radial-gradient(20em   at 24.5em -13em, @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width - 16em  -11em, @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width + 16em -11em,  @background-colour 99%, transparent 100%),
 
-                          radial-gradient(15.5em at 5em -8em,     @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
-                          radial-gradient(15.5em at 11em -8em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at @half-tree-width - 6em -8em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at @half-tree-width + 6em -8em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
 
-                          radial-gradient(20em   at -7em -9em,    @background-colour 99%, transparent 100%),
-                          radial-gradient(20em   at 28em -10em,   @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width - 15em -10em,  @background-colour  99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width + 15em -10em,  @background-colour 99%, transparent 100%),
 
-                          radial-gradient(15.5em at 5em -5em,     @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
-                          radial-gradient(15.5em at 15em -5em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%);
+                          radial-gradient(15.5em at @half-tree-width - 5em -5em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
+                          radial-gradient(15.5em at @half-tree-width + 5em -5em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%);
     }
 
     &:before {
         content: '';
         display: inline-block;
-        width: 2.5em;
-        height: 3em;
+        width: @trunk-width;
+        height: 5em;
 
         position: absolute;
-        left: 9em;
+        left: (@tree-width / 2) - (@trunk-width / 2);
         bottom: 0;
 
         background-color: @tree-trunk-colour;
@@ -169,14 +172,14 @@ body {
                               radial-gradient(0.7em at 60% 53%, @bauble-colour-2 70%, transparent 100%),
                               radial-gradient(0.7em at 45% 42%, @bauble-colour-3 70%, transparent 100%),
                               radial-gradient(0.7em at 37% 51%, @bauble-colour-1 70%, transparent 100%),
-                              radial-gradient(0.7em at 19% 50%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.7em at 19% 55%, @bauble-colour-2 70%, transparent 100%),
                               radial-gradient(0.7em at 30% 53%, @bauble-colour-3 70%, transparent 100%),
-                              radial-gradient(0.9em at 76% 43%, @bauble-colour-1 70%, transparent 100%),
-                              radial-gradient(0.9em at 93% 67%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.9em at 76% 51%, @bauble-colour-1 70%, transparent 100%),
+                              radial-gradient(0.9em at 85% 70%, @bauble-colour-2 70%, transparent 100%),
                               radial-gradient(0.9em at 78% 75%, @bauble-colour-3 70%, transparent 100%),
                               radial-gradient(0.9em at 61% 76%, @bauble-colour-1 70%, transparent 100%),
-                              radial-gradient(0.9em at 30% 73%, @bauble-colour-2 70%, transparent 100%),
-                              radial-gradient(0.9em at 7% 72%,  @bauble-colour-3 70%, transparent 100%);
+                              radial-gradient(0.9em at 30% 75%, @bauble-colour-2 70%, transparent 100%),
+                              radial-gradient(0.9em at 14% 72%,  @bauble-colour-3 70%, transparent 100%);
 
         }
     }
