@@ -219,6 +219,31 @@
           transition: @transition1, @transition2, @transition3;
 }
 
+.animation(@animation-1) {
+    -webkit-animation: @animation-1;
+       -moz-animation: @animation-1;
+            animation: @animation-1;
+}
+
+.animation(@animation-1, @animation-2) {
+    -webkit-animation: @animation-1, @animation-2;
+       -moz-animation: @animation-1, @animation-2;
+            animation: @animation-1, @animation-2;
+}
+
+.animation(@animation-1, @animation-2, @animation-3) {
+    -webkit-animation: @animation-1, @animation-2, @animation-3;
+       -moz-animation: @animation-1, @animation-2, @animation-3;
+            animation: @animation-1, @animation-2, @animation-3;
+}
+
+.animation-delay(@delay) {
+    -webkit-animation-delay: @delay;
+       -moz-animation-delay: @delay;
+            animation-delay: @delay;
+}
+
+
 .transform(@transform) {
     -webkit-transform: @transform translate3d(0, 0, 0);
        -moz-transform: @transform translate3d(0, 0, 0);
@@ -235,14 +260,23 @@
             transform: @transform1 @transform2 translate3d(0, 0, 0);
 }
 
-
-.transform( @transform1, @transform2, @transform3 ) {
+.transform(@transform1, @transform2, @transform3 ) {
     -webkit-transform: @transform1 @transform2 @transform3 translate3d(0, 0, 0);
        -moz-transform: @transform1 @transform2 @transform3 translate3d(0, 0, 0);
         -ms-transform: @transform1 @transform2 @transform3 translate3d(0, 0, 0);
          -o-transform: @transform1 @transform2 @transform3 translate3d(0, 0, 0);
             transform: @transform1 @transform2 @transform3 translate3d(0, 0, 0);
 }
+
+
+.transform-origin(@transform-origin) {
+    -webkit-transform-origin: @transform-origin;
+       -moz-transform-origin: @transform-origin;
+        -ms-transform-origin: @transform-origin;
+         -o-transform-origin: @transform-origin;
+            transform-origin: @transform-origin;
+}
+
 
 .rotate( @degs ) {
     .transform( rotate( @degs ) );

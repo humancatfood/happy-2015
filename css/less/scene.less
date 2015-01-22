@@ -244,8 +244,8 @@ body {
         z-index: -1;
         bottom: 0;
         left: 1em;
-        transform: skew(26deg, 0);
-        transform-origin: bottom;
+        .transform-origin(bottom);
+        .transform(skew(26deg, 0));
     }
 
     .wall, .roof, .window {
@@ -282,7 +282,7 @@ body {
         &:after {
             width: 8em;
             height: 4em;
-            transform: skew(40deg, 3deg);
+            .transform(skew(40deg, 3deg));
         }
 
         .wall {
@@ -296,7 +296,7 @@ body {
             border-left: 0.8em solid transparent;
             border-right: 0.5em solid transparent;
 
-            transform: skew(0, 3deg);
+            .transform(skew(0, 3deg));
         }
 
         .roof {
@@ -304,7 +304,7 @@ body {
             height: 6em;
             bottom: 6.4em;
             left: -2em;
-            transform: skewY(-3deg);
+            .transform(skewY(-3deg));
 
             &:after {
                 content: '';
@@ -312,7 +312,7 @@ body {
                 width: 16em;
                 height: 16em;
                 background-image: linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
-                transform: rotate(31deg) skew(-21deg, 8deg);
+                .transform(rotate(31deg), skew(-21deg, 8deg));
                 top: 3em;
                 position: absolute;
                 left: -1.5em;
@@ -322,27 +322,27 @@ body {
         .window-1 {
             bottom: 0em;
             left: 2em;
-            transform: skew(3deg, 3deg);
+            .transform(skew(3deg, 3deg));
             &:after {
-                transform: skew(-2deg, 1deg);
+                .transform(skew(-2deg, 1deg));
             }
         }
 
         .window-2 {
             bottom: 2.5em;
             left: 1em;
-            transform: skew(2deg, -1deg);
+            .transform(skew(2deg, -1deg));
             &:after {
-                transform: skew(-3deg, 1deg);
+                .transform(skew(-3deg, 1deg));
             }
         }
 
         .window-3 {
             bottom: 2.5em;
             left: 6em;
-            transform: skew(-3deg, 3deg);
+            .transform(skew(-3deg, 3deg));
             &:after {
-                transform: skew(-2deg, -1deg);
+                .transform(skew(-2deg, -1deg));
             }
         }
     }
@@ -356,7 +356,7 @@ body {
         &:after {
             width: 7em;
             height: 2em;
-            transform: skew(40deg, -5deg);
+            .transform(skew(40deg, -5deg));
         }
 
         .wall {
@@ -370,7 +370,7 @@ body {
             border-left: 0.8em solid transparent;
             border-right: 0.5em solid transparent;
 
-            transform: skew(0, -5deg);
+            .transform(skew(0, -5deg));
         }
 
         .roof {
@@ -378,7 +378,7 @@ body {
             height: 12em;
             bottom: 11em;
             left: -1em;
-            transform: skewY(3deg);
+            .transform(skewY(3deg));
 
             &:after {
                 content: '';
@@ -386,7 +386,7 @@ body {
                 width: 15em;
                 height: 14em;
                 background-image: linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
-                transform: rotate(20deg) skewY(44deg);
+                .transform(rotate(20deg), skewY(44deg));
                 top: 9em;
                 position: absolute;
                 left: -1em;
@@ -396,27 +396,27 @@ body {
         .window-1 {
             bottom: 7em;
             left: 1em;
-            transform: skew(10deg, 2deg);
+            .transform(skew(10deg, 2deg));
             &:after {
-                transform: skew(-20deg, -3deg);
+                .transform(skew(-20deg, -3deg));
             }
         }
 
         .window-2 {
             bottom: 2em;
             left: 1.5em;
-            transform: skew(1deg, -3deg);
+            .transform(skew(1deg, -3deg));
             &:after {
-                transform: skew(-4deg, 1deg);
+                .transform(skew(-4deg, 1deg));
             }
         }
 
         .window-3 {
             bottom: 3em;
             left: 5em;
-            transform: skew(4deg, -2deg);
+            .transform(skew(4deg, -2deg));
             &:after {
-                transform: skew(-1deg, 0deg);
+                .transform(skew(-1deg, 0deg));
             }
         }
     }
@@ -430,7 +430,7 @@ body {
         &:after {
             width: 11em;
             height: 3em;
-            transform: skew(40deg, -3deg);
+            .transform(skew(40deg, -3deg));
         }
 
         .wall {
@@ -444,14 +444,14 @@ body {
             border-left: 0.8em solid transparent;
             border-right: 1.5em solid transparent;
 
-            transform: rotate(-3deg);
+            .transform(rotate(-3deg));
         }
 
         .roof {
             width: 17em;
             height: 5em;
             bottom: 6em;
-            transform: skew(-41deg, 2deg);
+            .transform(skew(-41deg, 2deg));
 
             &:after {
                 content: '';
@@ -459,7 +459,7 @@ body {
                 width: 21em;
                 height: 16em;
                 background-image: linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
-                transform: skew(54deg, 3deg);
+                .transform(skew(54deg, 3deg));
                 position: absolute;
             }
         }
@@ -467,27 +467,27 @@ body {
         .window-1 {
             bottom: 2em;
             left: 1em;
-            transform: skew(10deg, 2deg);
+            .transform(skew(10deg, 2deg));
             &:after {
-                transform: skew(-20deg, -3deg);
+                .transform(skew(-20deg, -3deg));
             }
         }
 
         .window-2 {
             bottom: 1em;
             left: 5em;
-            transform: skew(-4deg, 1deg);
+            .transform(skew(-4deg, 1deg));
             &:after {
-                transform: skew(3deg, 4deg);
+                .transform(skew(3deg, 4deg));
             }
         }
 
         .window-3 {
             bottom: 1.5em;
             left: 9em;
-            transform: skew(-3deg, -3deg);
+            .transform(skew(-3deg, -3deg));
             &:after {
-                transform: skew(2deg, -3deg);
+                .transform(skew(2deg, -3deg));
             }
         }
     }
@@ -511,17 +511,20 @@ body {
 @bloom-colour-05: rgba(255, 100, 100, 0.25);
 
 
-@-webkit-keyframes bloom-anim {
+.bloom-anim() {
     0% {
-        transform: scale(0.0);
+        .transform(scale(0.0));
     }
     50% {
-        transform: scale(0.999);
+        .transform(scale(0.999));
     }
     100% {
-        transform: scale(0.0);
+        .transform(scale(0.0));
     }
 }
+@-webkit-keyframes bloom-anim { .bloom-anim(); }
+   @-moz-keyframes bloom-anim { .bloom-anim(); }
+        @keyframes bloom-anim { .bloom-anim(); }
 
 
 @-webkit-keyframes sparkles-anim-1 {
@@ -597,32 +600,32 @@ body {
         position: absolute;
         width: 50em;
         height: 40em;
-        transform: scale(0.0);
+        .transform(scale(0.0));
         margin: -20em 0 0 -25em;
 
         &.bloom-colour-01 {
             background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-01 0%, transparent 100%);
-            -webkit-animation-delay: @rocket-flight-time + 113;
+            .animation-delay(113);
             margin: -21em 0 0 -24em;
         }
         &.bloom-colour-02 {
             background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-02 0%, transparent 100%);
-            -webkit-animation-delay: @rocket-flight-time + 254;
+            .animation-delay(254);
             margin: -20em 0 0 -27em;
         }
         &.bloom-colour-03 {
             background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-03 0%, transparent 100%);
-            -webkit-animation-delay: @rocket-flight-time + 301;
+            .animation-delay(301);
             margin: -18em 0 0 -21em;
         }
         &.bloom-colour-04 {
             background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-04 0%, transparent 100%);
-            -webkit-animation-delay: @rocket-flight-time + 412;
+            .animation-delay(412);
             margin: -17em 0 0 -26em;
         }
         &.bloom-colour-05 {
             background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-05 0%, transparent 100%);
-            -webkit-animation-delay: @rocket-flight-time + 533;
+            .animation-delay(553);
             margin: -22em 0 0 -26em;
         }
 
@@ -632,38 +635,35 @@ body {
         position: absolute;
         width: 0.5em;
         height: 0.5em;
-        -webkit-transform: scale(0);
+        .transform(scale(0));
         background-image: radial-gradient(closest-side at 50% 50%, white 0%, transparent 100%);
     }
 
     &.active {
 
         .sparkles-1 {
-            -webkit-animation: sparkles-anim-1   @sparkles-time ease-in-out @rocket-flight-time + 112,
-                               sparkles-anim-x-1 @sparkles-time ease-in-out @rocket-flight-time + 112,
-                               sparkles-anim-y-1 @sparkles-time ease-in-out @rocket-flight-time + 112;
+            .animation(sparkles-anim-1   @sparkles-time ease-in-out 112,
+                       sparkles-anim-x-1 @sparkles-time ease-in-out 112,
+                       sparkles-anim-y-1 @sparkles-time ease-in-out 112);
         }
         .sparkles-2 {
-            -webkit-animation: sparkles-anim-2   @sparkles-time ease-in-out @rocket-flight-time + 252,
-                               sparkles-anim-x-2 @sparkles-time ease-in-out @rocket-flight-time + 252,
-                               sparkles-anim-y-2 @sparkles-time ease-in-out @rocket-flight-time + 252;
+            .animation(sparkles-anim-2   @sparkles-time ease-in-out 252,
+                       sparkles-anim-x-2 @sparkles-time ease-in-out 252,
+                       sparkles-anim-y-2 @sparkles-time ease-in-out 252)
         }
         .sparkles-3 {
-            -webkit-animation: sparkles-anim-1   @sparkles-time ease-in-out @rocket-flight-time + 322,
-                               sparkles-anim-x-2 @sparkles-time ease-in-out @rocket-flight-time + 322,
-                               sparkles-anim-y-1 @sparkles-time ease-in-out @rocket-flight-time + 322;
+            .animation(sparkles-anim-1   @sparkles-time ease-in-out 322,
+                       sparkles-anim-x-2 @sparkles-time ease-in-out 322,
+                       sparkles-anim-y-1 @sparkles-time ease-in-out 322);
         }
         .sparkles-4 {
-            -webkit-animation: sparkles-anim-2   @sparkles-time ease-in-out @rocket-flight-time + 280,
-                               sparkles-anim-x-1 @sparkles-time ease-in-out @rocket-flight-time + 280,
-                               sparkles-anim-y-2 @sparkles-time ease-in-out @rocket-flight-time + 280;
+            .animation(sparkles-anim-2   @sparkles-time ease-in-out 280,
+                       sparkles-anim-x-1 @sparkles-time ease-in-out 280,
+                       sparkles-anim-y-2 @sparkles-time ease-in-out 280);
         }
 
         .bloom {
-            -webkit-animation-name: bloom-anim;
-            -webkit-animation-duration: @bloom-time;
-            -webkit-animation-function: ease;
-
+            .animation(bloom-anim   @bloom-time ease-in-out);
         }
 
     }
