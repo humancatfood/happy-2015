@@ -510,24 +510,6 @@ body {
 @bloom-colour-05: rgba(255, 100, 100, 0.25);
 
 
-@-webkit-keyframes rocket-anim {
-    0% {
-        opacity: 0;
-    }
-    1% {
-        left: 120%;
-        opacity: 1;
-    }
-    99% {
-        left: -20%;
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-
 @-webkit-keyframes bloom-anim {
     0% {
         transform: scale(0.0);
@@ -609,29 +591,6 @@ body {
     position: relative;
     z-index: -1;
 
-    .rocket {
-
-        width: 50%;
-        height: .25em;
-
-        transform: rotate(45deg);
-        transform-origin: center left;
-        z-index: 27;
-
-        overflow: hidden;
-
-        &:after {
-            content: '';
-            opacity: 0;
-            width: 50px;
-            height: 100%;
-            position: absolute;
-
-            background-image: radial-gradient(100% 25% at 0 50%, #ffffff 0%, transparent 100%);
-        }
-
-    }
-
     .bloom {
 
         position: absolute;
@@ -676,13 +635,7 @@ body {
         background-image: radial-gradient(closest-side at 50% 50%, white 0%, transparent 100%);
     }
 
-
-
     &.active {
-
-        .rocket:after {
-            -webkit-animation: rocket-anim @rocket-flight-time ease;
-        }
 
         .sparkles-1 {
             -webkit-animation: sparkles-anim-1   @sparkles-time ease-in-out @rocket-flight-time + 112,
