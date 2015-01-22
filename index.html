@@ -44,7 +44,7 @@
                         for (var i= 0, l=stars.length; i<l; i++)
                         {
                             var star = stars[i];
-                            document.write('<div class="star" style="top: ' + star[0] + '%; left: ' + star[1] + '%; font-size: ' + star[2] + 'em;"></div>');
+                            document.write('<div class="star" style="bottom: ' + (star[0] + 25) + 'em; left: ' + star[1] + '%; width: ' + star[2] + 'em; height: ' + (star[2] * 2) + 'em;"></div>');
                         }
                     }());
 
@@ -109,7 +109,6 @@
             </div>
 
             <div class="fireworks" style="top: 21em; left: 58em;">
-                <div class="rocket"></div>
 
                 <div class="bloom bloom-colour-01"></div>
                 <div class="bloom bloom-colour-02"></div>

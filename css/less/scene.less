@@ -1,6 +1,6 @@
 //colours
 
-@background-colour: #16233a;
+@background-colour: rgba(22, 35, 58, 0.99);
 
 @star-colour: white;
 
@@ -21,8 +21,7 @@
 
 @min-width: 45em;
 @max-width: 65em;
-@min-height: 600px;
-@max-height: 1080px;
+@min-height: 320px;
 @ground-height: 14.0em;
 
 * {
@@ -47,7 +46,7 @@ body {
     overflow: hidden;
     z-index: 0;
 
-    font-size: 14px;
+    font-size: 22px;
 
     background-image: linear-gradient(0deg, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
 
@@ -63,6 +62,11 @@ body {
 }
 
 
+@media (max-width: 1920px) {
+    body {
+        font-size: 18px;
+    }
+}
 @media (max-width: 1200px) {
     body {
         font-size: 14px;
@@ -89,7 +93,7 @@ body {
     top: 0;
     bottom: 0;
 
-    background-image: linear-gradient(0, transparent 50%, black 100%)
+    .linear-gradient(0%, black, 50%, transparent);
 }
 
 
@@ -123,20 +127,21 @@ body {
         height: 12em;
         position: relative;
 
-        background-image: radial-gradient(20em   at @half-tree-width - 15em -13em,  @background-colour 99%, transparent 100%),
-                          radial-gradient(20em   at @half-tree-width + 15em -13em,  @background-colour 99%, transparent 100%),
+
+        background-image: radial-gradient(20em   at @half-tree-width + 15em -13em,  @background-colour 99%, transparent 99%),
+                          radial-gradient(20em   at @half-tree-width - 15em -13em,  @background-colour 99%, transparent 99%),
 
                           radial-gradient(15.5em at @half-tree-width - 5em -11em,   @snow-colour-light 92%, @tree-colour-light 98%, @tree-colour-dark 99%, transparent 100%),
                           radial-gradient(15.5em at @half-tree-width + 5em -11em,   @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
 
-                          radial-gradient(20em   at @half-tree-width - 16em  -11em, @background-colour 99%, transparent 100%),
-                          radial-gradient(20em   at @half-tree-width + 16em -11em,  @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width - 16em  -11em, @background-colour 99%, transparent 99%),
+                          radial-gradient(20em   at @half-tree-width + 16em -11em,  @background-colour 99%, transparent 99%),
 
                           radial-gradient(15.5em at @half-tree-width - 6em -8em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
                           radial-gradient(15.5em at @half-tree-width + 6em -8em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
 
-                          radial-gradient(20em   at @half-tree-width - 15em -10em,  @background-colour  99%, transparent 100%),
-                          radial-gradient(20em   at @half-tree-width + 15em -10em,  @background-colour 99%, transparent 100%),
+                          radial-gradient(20em   at @half-tree-width - 15em -10em,  @background-colour 99%, transparent 99%),
+                          radial-gradient(20em   at @half-tree-width + 15em -10em,  @background-colour 99%, transparent 99%),
 
                           radial-gradient(15.5em at @half-tree-width - 5em -5em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%),
                           radial-gradient(15.5em at @half-tree-width + 5em -5em,    @snow-colour-light 90%, @tree-colour-light 95%, @tree-colour-dark 99%, transparent 100%);
@@ -161,9 +166,9 @@ body {
         bottom: @ground-height + 1.5em;
     }
     &.tree-2 {
-        font-size: 0.55em;
+        font-size: 0.54em;
         left: 32em;
-        bottom: @ground-height + 9em;
+        bottom: @ground-height + 10em;
     }
     &.tree-3 {
         font-size: 0.2em;
@@ -269,7 +274,7 @@ body {
             position: relative;
             left: -1em;
             top: -1em;
-            background: linear-gradient(0, @window-colour-dark -30%, @window-colour-light 21%);
+            .linear-gradient(75%, @window-colour-light, 120%, @window-colour-dark);
         }
     }
 
