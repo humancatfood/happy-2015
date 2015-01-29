@@ -67,6 +67,11 @@
             <!-- fireworks -->
             <script type="text/javascript">
 
+                function roundTo(n, d)
+                {
+                    d = Math.pow(10, d + 1);
+                    return Math.floor(n * d) / d;
+                }
 
                 for (var i=0; i<5; ++i)
                 {
@@ -85,19 +90,45 @@
 
                 (function doOne() {
                     var fs = document.querySelectorAll('.fireworks:not(.active)');
+                    var random = Math.random,
+                        floor = Math.floor;;
 
                     if (fs.length)
                     {
-                        var f = fs[Math.floor(Math.random() * fs.length)];
+                        var f = fs[floor(random() * fs.length)];
+
+                        f.style.bottom = (35 + 15 * roundTo(random(), 2)) + 'em';
+                        f.style.left = (50 + 60 * roundTo(random(), 2) - 30) + '%';
+                        var child, width, height;
+                        for (var i= 0, l= f.children.length; i<l; ++i)
+                        {
+                            child = f.children[i];
+                            if (child.classList.contains('bloom'))
+                            {
+                                child.className = 'bloom c-' + floor(roundTo(random(), 2) * 5);
+                                child.style.marginLeft = -18 + (1 * roundTo(random(), 2) - 2) + 'em';
+                                child.style.marginTop = -13 + (1 * roundTo(random(), 2) - 2) + 'em';
+                            }
+                            else if (child.classList.contains('sparkles'))
+                            {
+                                width = 15 + (10 * roundTo(random(), 2) - 5);
+                                height = 15 + (10 * roundTo(random(), 2) - 5);
+
+                                child.className = 'sparkles c-' + floor(roundTo(random(), 2) * 5);
+                                child.style.width = width + 'em';
+                                child.style.height = height + 'em';
+                                child.style.top = (-height * 0.5) + 'em';
+                            }
+                        }
 
                         f.classList.add('active')
 
                         window.setTimeout(function () {
                             f.classList.remove('active');
-                        }, 1500);
+                        }, 1200);
                     }
 
-                    window.setTimeout(doOne, Math.random() * 1000);
+                    window.setTimeout(doOne, Math.random() * 1200);
 
                 }());
 
