@@ -508,11 +508,17 @@ body {
 
 // fireworks colours
 
-@bloom-colour-01: rgba(255, 100, 255, 0.25);
-@bloom-colour-02: rgba(255, 255, 100, 0.25);
-@bloom-colour-03: rgba(100, 255, 255, 0.25);
-@bloom-colour-04: rgba(100, 100, 255, 0.25);
-@bloom-colour-05: rgba(255, 100, 100, 0.25);
+@bloom-colour-01: rgba(255, 100, 255, 0.5);
+@bloom-colour-02: rgba(255, 255, 100, 0.5);
+@bloom-colour-03: rgba(100, 255, 255, 0.5);
+@bloom-colour-04: rgba(100, 100, 255, 0.5);
+@bloom-colour-05: rgba(255, 100, 100, 0.5);
+
+@sparkles-colour-01: rgba(255, 155, 255, 1.0);
+@sparkles-colour-02: rgba(255, 255, 155, 1.0);
+@sparkles-colour-03: rgba(155, 255, 255, 1.0);
+@sparkles-colour-04: rgba(155, 155, 255, 1.0);
+@sparkles-colour-05: rgba(255, 155, 155, 1.0);
 
 
 .bloom-anim() {
@@ -531,143 +537,178 @@ body {
         @keyframes bloom-anim { .bloom-anim(); }
 
 
-@-webkit-keyframes sparkles-anim-1 {
+
+.sparkles-size-anim() {
     0% {
-        -webkit-transform: scale(0);
+        .transform(scale(0.0));
     }
     50% {
-        -webkit-transform: scale(1);
+        .transform(scale(0.999));
     }
     100% {
-        -webkit-transform: scale(0);
+        .transform(scale(0.0));
     }
 }
-@-webkit-keyframes sparkles-anim-y-1 {
-    0% {
-        top: 0px;
-    }
-    50% {
-        top: -50px;
-    }
-    100% {
-        top: 150px;
-    }
-}
-@-webkit-keyframes sparkles-anim-x-1 {
-    0% {
-        left: 0px;
-    }
-    100% {
-        left: 200px;
-    }
-}
+@-webkit-keyframes sparkles-size-anim { .sparkles-size-anim(); }
+   @-moz-keyframes sparkles-size-anim { .sparkles-size-anim(); }
+        @keyframes sparkles-size-anim { .sparkles-size-anim(); }
 
 
-@-webkit-keyframes sparkles-anim-2 {
+.sparkles-anim-y() {
     0% {
-        -webkit-transform: scale(0);
+        top: 30%;
     }
     50% {
-        -webkit-transform: scale(1.5);
+        top: 0%;
     }
     100% {
-        -webkit-transform: scale(0);
+        top: 100%;
     }
 }
-@-webkit-keyframes sparkles-anim-y-2 {
+@-webkit-keyframes sparkles-anim-y { .sparkles-anim-y(); }
+   @-moz-keyframes sparkles-anim-y { .sparkles-anim-y(); }
+        @keyframes sparkles-anim-y { .sparkles-anim-y(); }
+
+
+.sparkles-anim-x-left() {
     0% {
-        top: 0px;
-    }
-    50% {
-        top: -80px;
+        right: 0%;
     }
     100% {
-        top: 130px;
+        right: 100%;
     }
 }
-@-webkit-keyframes sparkles-anim-x-2 {
+@-webkit-keyframes sparkles-anim-x-left { .sparkles-anim-x-left(); }
+   @-moz-keyframes sparkles-anim-x-left { .sparkles-anim-x-left(); }
+        @keyframes sparkles-anim-x-left { .sparkles-anim-x-left(); }
+
+
+.sparkles-anim-x-right() {
     0% {
-        left: 0px;
+        left: 0%;
     }
     100% {
-        left: -200px;
+        left: 100%;
     }
 }
+@-webkit-keyframes sparkles-anim-x-right { .sparkles-anim-x-right(); }
+   @-moz-keyframes sparkles-anim-x-right { .sparkles-anim-x-right(); }
+        @keyframes sparkles-anim-x-right { .sparkles-anim-x-right(); }
+
 
 .fireworks {
 
-    position: relative;
-    z-index: -1;
+    position: absolute;
 
     .bloom {
 
         position: absolute;
-        width: 50em;
-        height: 40em;
-        .transform(scale(0.0));
-        margin: -20em 0 0 -25em;
+        width: 36em;
+        height: 26em;
 
-        &.bloom-colour-01 {
-            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-01 0%, transparent 100%);
-            .animation-delay(113);
-            margin: -21em 0 0 -24em;
-        }
-        &.bloom-colour-02 {
-            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-02 0%, transparent 100%);
-            .animation-delay(254);
-            margin: -20em 0 0 -27em;
-        }
-        &.bloom-colour-03 {
-            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-03 0%, transparent 100%);
-            .animation-delay(301);
-            margin: -18em 0 0 -21em;
-        }
-        &.bloom-colour-04 {
-            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-04 0%, transparent 100%);
-            .animation-delay(412);
-            margin: -17em 0 0 -26em;
-        }
-        &.bloom-colour-05 {
+        .transform(scale(0.0));;
+
+        .animation-duration(@bloom-time);
+        .animation-timing-function(ease-in-out);
+
+        &.c-0 {
             background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-05 0%, transparent 100%);
-            .animation-delay(553);
-            margin: -22em 0 0 -26em;
+        }
+        &.c-1 {
+            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-01 0%, transparent 100%);
+        }
+        &.c-2 {
+            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-02 0%, transparent 100%);
+        }
+        &.c-3 {
+            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-03 0%, transparent 100%);
+        }
+        &.c-4 {
+            background-image: radial-gradient(closest-side at 50% 50%, @bloom-colour-04 0%, transparent 100%);
+        }
+
+        &:nth-child(1) {
+            .animation-delay(13ms);
+        }
+        &:nth-child(2) {
+            .animation-delay(154ms);
+        }
+        &:nth-child(3) {
+            .animation-delay(201ms);
+        }
+        &:nth-child(4) {
+            .animation-delay(312ms);
+        }
+        &:nth-child(5) {
+            .animation-delay(453ms);
+        }
+        &:nth-child(6) {
+            .animation-delay(523ms);
+        }
+        &:nth-child(7) {
+            .animation-delay(601ms);
+        }
+        &:nth-child(8) {
+            .animation-delay(713ms);
+        }
+        &:nth-child(9) {
+            .animation-delay(823ms);
         }
 
     }
 
     .sparkles {
         position: absolute;
-        width: 0.5em;
-        height: 0.5em;
-        .transform(scale(0));
-        background-image: radial-gradient(closest-side at 50% 50%, white 0%, transparent 100%);
+
+        &:nth-of-type(even) {
+            right: 0;
+        }
+
+        &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 0.5em;
+            height: 0.5em;
+            .transform(scale(0));
+        }
+
+        &.c-0:after {
+            background-image: radial-gradient(closest-side at 50% 50%, @sparkles-colour-01 0%, transparent 100%);
+        }
+        &.c-1:after {
+            background-image: radial-gradient(closest-side at 50% 50%, @sparkles-colour-02 0%, transparent 100%);
+        }
+        &.c-2:after {
+            background-image: radial-gradient(closest-side at 50% 50%, @sparkles-colour-03 0%, transparent 100%);
+        }
+        &.c-3:after {
+            background-image: radial-gradient(closest-side at 50% 50%, @sparkles-colour-04 0%, transparent 100%);
+        }
+        &.c-4:after {
+            background-image: radial-gradient(closest-side at 50% 50%, @sparkles-colour-05 0%, transparent 100%);
+        }
     }
 
     &.active {
 
-        .sparkles-1 {
-            .animation(sparkles-anim-1   @sparkles-time ease-in-out 112,
-                       sparkles-anim-x-1 @sparkles-time ease-in-out 112,
-                       sparkles-anim-y-1 @sparkles-time ease-in-out 112);
+        .sparkles:nth-of-type(odd) {
+            &:after {
+                .animation(sparkles-size-anim    @sparkles-time ease-in-out,
+                           sparkles-anim-x-right @sparkles-time ease-in-out,
+                           sparkles-anim-y       @sparkles-time ease-in-out);
+            }
         }
-        .sparkles-2 {
-            .animation(sparkles-anim-2   @sparkles-time ease-in-out 252,
-                       sparkles-anim-x-2 @sparkles-time ease-in-out 252,
-                       sparkles-anim-y-2 @sparkles-time ease-in-out 252)
-        }
-        .sparkles-3 {
-            .animation(sparkles-anim-1   @sparkles-time ease-in-out 322,
-                       sparkles-anim-x-2 @sparkles-time ease-in-out 322,
-                       sparkles-anim-y-1 @sparkles-time ease-in-out 322);
-        }
-        .sparkles-4 {
-            .animation(sparkles-anim-2   @sparkles-time ease-in-out 280,
-                       sparkles-anim-x-1 @sparkles-time ease-in-out 280,
-                       sparkles-anim-y-2 @sparkles-time ease-in-out 280);
+        .sparkles:nth-of-type(even) {
+            &:after {
+                .animation(sparkles-size-anim   @sparkles-time ease-in-out,
+                           sparkles-anim-x-left @sparkles-time ease-in-out,
+                           sparkles-anim-y      @sparkles-time ease-in-out);
+            }
         }
 
         .bloom {
-            .animation(bloom-anim   @bloom-time ease-in-out);
+            .animation-name(bloom-anim);
         }
 
     }
