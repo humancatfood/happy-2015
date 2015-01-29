@@ -243,6 +243,24 @@
             animation-delay: @delay;
 }
 
+.animation-name(@name) {
+    -webkit-animation-name: @name;
+       -moz-animation-name: @name;
+            animation-name: @name;
+}
+
+.animation-timing-function(@function) {
+    -webkit-animation-timing-function: @function;
+       -moz-animation-timing-function: @function;
+            animation-timing-function: @function;
+}
+
+.animation-duration(@duration) {
+    -webkit-animation-duration: @duration;
+       -moz-animation-duration: @duration;
+            animation-duration: @duration;
+}
+
 
 .transform(@transform) {
     -webkit-transform: @transform translate3d(0, 0, 0);
