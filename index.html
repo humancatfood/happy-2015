@@ -65,65 +65,23 @@
 
 
             <!-- fireworks -->
-            <div class="fireworks" style="top: 20em; left: 30em;">
-                <div class="bloom bloom-colour-01"></div>
-                <div class="bloom bloom-colour-02"></div>
-                <div class="bloom bloom-colour-03"></div>
-                <div class="bloom bloom-colour-04"></div>
-                <div class="bloom bloom-colour-05"></div>
-
-                <div class="sparkles sparkles-1"></div>
-                <div class="sparkles sparkles-2"></div>
-                <div class="sparkles sparkles-3"></div>
-                <div class="sparkles sparkles-4"></div>
-                <div class="sparkles sparkles-5"></div>
-            </div>
-
-            <div class="fireworks" style="top: 22em; left: 60em;">
-                <div class="bloom bloom-colour-01"></div>
-                <div class="bloom bloom-colour-02"></div>
-                <div class="bloom bloom-colour-03"></div>
-                <div class="bloom bloom-colour-04"></div>
-                <div class="bloom bloom-colour-05"></div>
-
-                <div class="sparkles sparkles-1"></div>
-                <div class="sparkles sparkles-2"></div>
-                <div class="sparkles sparkles-3"></div>
-                <div class="sparkles sparkles-4"></div>
-                <div class="sparkles sparkles-5"></div>
-            </div>
-
-            <div class="fireworks" style="top: 18em; left: 25em;">
-
-                <div class="bloom bloom-colour-01"></div>
-                <div class="bloom bloom-colour-02"></div>
-                <div class="bloom bloom-colour-03"></div>
-                <div class="bloom bloom-colour-04"></div>
-                <div class="bloom bloom-colour-05"></div>
-
-                <div class="sparkles sparkles-1"></div>
-                <div class="sparkles sparkles-2"></div>
-                <div class="sparkles sparkles-3"></div>
-                <div class="sparkles sparkles-4"></div>
-                <div class="sparkles sparkles-5"></div>
-            </div>
-
-            <div class="fireworks" style="top: 21em; left: 58em;">
-
-                <div class="bloom bloom-colour-01"></div>
-                <div class="bloom bloom-colour-02"></div>
-                <div class="bloom bloom-colour-03"></div>
-                <div class="bloom bloom-colour-04"></div>
-                <div class="bloom bloom-colour-05"></div>
-
-                <div class="sparkles sparkles-1"></div>
-                <div class="sparkles sparkles-2"></div>
-                <div class="sparkles sparkles-3"></div>
-                <div class="sparkles sparkles-4"></div>
-                <div class="sparkles sparkles-5"></div>
-            </div>
-
             <script type="text/javascript">
+
+
+                for (var i=0; i<5; ++i)
+                {
+                    window.document.write(
+                        '<div class="fireworks" style="bottom: ' + (35 + 15 * roundTo(Math.random(), 2)) + 'em; left: ' + (50 + (60 *roundTo(Math.random(), 2) - 30)) + '%;">' +
+                            '<div class="bloom"></div>' +
+                            '<div class="bloom"></div>' +
+                            '<div class="bloom"></div>' +
+                            '<div class="sparkles"></div>' +
+                            '<div class="sparkles"></div>' +
+                            '<div class="sparkles"></div>' +
+                            '<div class="sparkles"></div>' +
+                        '</div>'
+                    )
+                }
 
                 (function doOne() {
                     var fs = document.querySelectorAll('.fireworks:not(.active)');
