@@ -141,6 +141,22 @@
     background-image:         linear-gradient(top, @color1 @stop1, @color2 @stop2, @color3 @stop3, @color4 @stop4);
 }
 
+.linear-gradient-left(@stop1, @color1, @stop2, @color2) {
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(@stop1,@color1), color-stop(@stop2,@color2));
+    background-image: -webkit-linear-gradient(left, @color1 @stop1, @color2 @stop2);
+    background-image:    -moz-linear-gradient(left, @color1 @stop1, @color2 @stop2);
+    background-image:      -o-linear-gradient(left, @color1 @stop1, @color2 @stop2);
+    background-image:         linear-gradient(left, @color1 @stop1, @color2 @stop2);
+}
+
+.linear-gradient-left(@stop1, @color1, @stop2, @color2, @stop3, @color3) {
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(@stop1,@color1), color-stop(@stop2,@color2), color-stop(@stop3,@color3));
+    background-image: -webkit-linear-gradient(left, @color1 @stop1, @color2 @stop2, @color3 @stop3);
+    background-image:    -moz-linear-gradient(left, @color1 @stop1, @color2 @stop2, @color3 @stop3);
+    background-image:      -o-linear-gradient(left, @color1 @stop1, @color2 @stop2, @color3 @stop3);
+    background-image:         linear-gradient(left, @color1 @stop1, @color2 @stop2, @color3 @stop3);
+}
+
 .linear-gradient-left(@stop1, @color1, @stop2, @color2, @stop3, @color3, @stop4, @color4) {
     background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(@stop1,@color1), color-stop(@stop2,@color2), color-stop(@stop3,@color3), color-stop(@stop4,@color4));
     background-image: -webkit-linear-gradient(left, @color1 @stop1, @color2 @stop2, @color3 @stop3, @color4 @stop4);
@@ -149,10 +165,12 @@
     background-image:         linear-gradient(left, @color1 @stop1, @color2 @stop2, @color3 @stop3, @color4 @stop4);
 }
 
-.box-sizing(@sizing) {
-    -webkit-box-sizing: @sizing;   /* Safari 3-4, also probably droppable */
-       -moz-box-sizing: @sizing;   /* Firefox 1, probably can drop this */
-            box-sizing: @sizing;   /* Everything else */
+.box-sizing (@box-sizing) {
+    -webkit-box-sizing: @box-sizing;
+       -moz-box-sizing: @box-sizing;
+        -ms-box-sizing: @box-sizing;
+         -o-box-sizing: @box-sizing;
+            box-sizing: @box-sizing;
 }
 
 .border-radius(@radius) {
@@ -198,6 +216,7 @@
             box-shadow: @offset-x-inner @offset-y-inner @blur-inner @spread-inner @color-inner inset, @offset-x-outer @offset-y-outer @blur-outer @spread-outer @color-outer;
 }
 
+
 .transition(@transition) {
   -webkit-transition: @transition;
      -moz-transition: @transition;
@@ -218,6 +237,7 @@
        -o-transition: @transition1, @transition2, @transition3;
           transition: @transition1, @transition2, @transition3;
 }
+
 
 .animation(@animation-1) {
     -webkit-animation: @animation-1;
@@ -295,6 +315,13 @@
             transform-origin: @transform-origin;
 }
 
+.transform-transition( @time, @easing ) {
+   -webkit-transition: -webkit-transform @time @easing;
+      -moz-transition:    -moz-transform @time @easing;
+       -ms-transition:     -ms-transform @time @easing;
+        -o-transition:      -o-transform @time @easing;
+           transition:         transform @time @easing;
+}
 
 .rotate( @degs ) {
     .transform( rotate( @degs ) );
@@ -312,10 +339,29 @@
 }
 
 
-.right {
-    float: right;
+.random-float(@min: 0, @max: @min+1) {
+
+    @num: `Math.random() * (@{max} - @{min} + @{int})`;
+
+
+  .checkInt() {
+    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
+  }
+  .checkInt();
+  @randNum: @base + @min;
 }
 
-.left {
-    float: left;
+
+.random-float(@min: 0, @max: @min+1, @int: 0) {
+
+    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+
+
+  .checkInt() {
+    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
+  }
+  .checkInt();
+  @randNum: @base + @min;
 }

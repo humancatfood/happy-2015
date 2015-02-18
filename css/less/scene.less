@@ -48,7 +48,12 @@ body {
 
     font-size: 22px;
 
-    background-image: linear-gradient(0deg, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
+    // TODO: implement proper rotate-able linear gradients!
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0, @snow-colour-light), color-stop(@ground-height, @snow-colour-dark), color-stop(@ground-height, transparent));
+    background-image: -webkit-linear-gradient(bottom, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
+    background-image:    -moz-linear-gradient(bottom, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
+    background-image:      -o-linear-gradient(bottom, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
+    background-image:         linear-gradient(bottom, @snow-colour-light, @snow-colour-dark @ground-height, transparent @ground-height);
 
     main {
         height: 100%;
@@ -316,7 +321,10 @@ body {
                 display: block;
                 width: 16em;
                 height: 16em;
-                background-image: linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
+                background-image: -webkit-linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
+                background-image:    -moz-linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
+                background-image:      -o-linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
+                background-image:         linear-gradient(137deg, @snow-colour-light 13%, @house-roof-colour-light 20%);
                 .transform(rotate(31deg), skew(-21deg, 8deg));
                 top: 3em;
                 position: absolute;
@@ -390,7 +398,10 @@ body {
                 display: block;
                 width: 15em;
                 height: 14em;
-                background-image: linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
+                background-image: -webkit-linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
+                background-image:    -moz-linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
+                background-image:      -o-linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
+                background-image:         linear-gradient(126deg, @snow-colour-light 18%, @house-roof-colour-dark 29%);
                 .transform(rotate(20deg), skewY(44deg));
                 top: 9em;
                 position: absolute;
@@ -463,7 +474,10 @@ body {
                 display: block;
                 width: 21em;
                 height: 16em;
-                background-image: linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
+                background-image: -webkit-linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
+                background-image:    -moz-linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
+                background-image:      -o-linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
+                background-image:         linear-gradient(176deg, @snow-colour-light 13%, @house-roof-colour-medium 20%);
                 .transform(skew(54deg, 3deg));
                 position: absolute;
             }
